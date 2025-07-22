@@ -19,13 +19,15 @@ def play_game():
   print("Type Q to quit\n")
   
   while True:
-    user_choice= input("Enter a choice from Rock, Paper, Scissors or Q to quit the game").lower()
+    user_choice= input("Enter a choice from Rock, Paper, Scissors").lower()
     if user_choice == "q":
       print("Thanks for playing!")
       break 
     if user_choice not in choices:
       print("Re-enter, the choice does not exists")
       continue
+
+    user_history[user_choice]= user_history[user_choice]+ 1
     
     computer_choice = random.choice(choices)
     print(f"Computer's choice is: {computer_choice}")
