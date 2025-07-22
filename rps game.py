@@ -1,6 +1,23 @@
 import random
+
+def predicted_user_choice(history):
+  return max(history, key=history.get)
+
+def computer_move(predicted):
+  if predicted=="rock":
+    return "paper"
+  elif predicted=="paper":
+    return"scissor"
+  else:
+    return "rock
+    
 def play_game():
   choices=["rock", "paper", "scissors"]
+  user_history = {"rock": 0, "paper": 0, "scissors": 0}
+
+  print("Play Rock-Paper-Scissors with Simple AI")
+  print("Type Q to quit\n")
+  
   while True:
     user_choice= input("Enter a choice from Rock, Paper, Scissors or Q to quit the game").lower()
     if user_choice == "q":
