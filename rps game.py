@@ -1,4 +1,4 @@
-import random
+
 
 def predicted_user_choice(history):
   return max(history, key=history.get)
@@ -7,9 +7,9 @@ def computer_move(predicted):
   if predicted=="rock":
     return "paper"
   elif predicted=="paper":
-    return"scissor"
+    return"scissors"
   else:
-    return "rock
+    return "rock"
     
 def play_game():
   choices=["rock", "paper", "scissors"]
