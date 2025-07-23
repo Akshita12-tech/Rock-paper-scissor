@@ -29,8 +29,12 @@ def play_game():
 
     user_history[user_choice]= user_history[user_choice]+ 1
     
-    computer_choice = random.choice(choices)
-    print(f"Computer's choice is: {computer_choice}")
+    predicted = predicted_user_choice(user_history)
+    computer_choice = computer_move(predicted)
+
+    print(f"Computer predicted you might choose: {predicted}")
+    print(f"Computer's choice: {computer_choice}")
+
     if user_choice== computer_choice:
       print("It's a tie")
     elif ((user_choice=="rock" and  computer_choice=="scissors") or
@@ -39,6 +43,8 @@ def play_game():
       print("You are the winner")
     else:
       print("The computer has won so better luck next time")
+      
+    print("-" * 30)
   
  
 play_game()   
